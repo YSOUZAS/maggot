@@ -5,7 +5,8 @@
     "baseUrl": ".",
     "paths": {
       "@environment/*": ["src/environments/*"],
-      "@app/*": ["src/app/*"]
+      "@app/*": ["src/app/*"],
+      "@app/material": ["src/app/shared-modules/material/*"]
     },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
