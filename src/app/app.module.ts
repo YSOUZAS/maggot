@@ -4,8 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-// material
-import { MaterialModule } from './shared-modules/material/material.module';
+// modules
+import { SharedModule } from './shared-modules/shared/shared.module';
 
 // components
 import { AppComponent } from './app.component';
@@ -16,7 +16,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
