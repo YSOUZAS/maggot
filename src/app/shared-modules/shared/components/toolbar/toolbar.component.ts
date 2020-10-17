@@ -1,5 +1,11 @@
 // angular
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  ChangeDetectionStrategy,
+  Output,
+  EventEmitter,
+  Input,
+} from '@angular/core';
 
 @Component({
   selector: 'app-toolbar',
@@ -8,8 +14,22 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   host: { class: 'c-toolbar' },
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ToolbarComponent implements OnInit {
-  constructor() {}
+export class ToolbarComponent {
+  @Output() event: EventEmitter<void> = new EventEmitter();
 
-  ngOnInit(): void {}
+  private _title: string;
+  @Input() set title(value: string) {
+    if (value !== this._title) {
+      this._title = value;
+    }
+  }
+  get title(): string {
+    return this._title;
+  }
+
+  @Input() hasIcon = true;
+
+  emitEvent(): void {
+    this.event.emit();
+  }
 }

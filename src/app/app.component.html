@@ -1,1 +1,19 @@
-<app-toolbar class="c-app__toolbar"></app-toolbar>
+<app-toolbar
+  [title]="title"
+  (event)="sidenav.toggle()"
+  class="c-app__toolbar"
+></app-toolbar>
+
+<mat-sidenav-container class="c-app__container">
+  <mat-sidenav #sidenav mode="side" [position]="'end'" class="c-app__sidenav">
+    Sidenav
+  </mat-sidenav>
+
+  <mat-sidenav-content> </mat-sidenav-content>
+</mat-sidenav-container>
+
+<app-toolbar
+  [title]="footer"
+  [hasIcon]="false"
+  class="c-app__footer"
+></app-toolbar>

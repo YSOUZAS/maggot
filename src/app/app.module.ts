@@ -9,6 +9,7 @@ import { SharedModule } from './shared-modules/shared/shared.module';
 
 // components
 import { AppComponent } from './app.component';
+import { MaterialModule } from './shared-modules/material/material.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +18,7 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
