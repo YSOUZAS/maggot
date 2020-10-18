@@ -14,13 +14,13 @@ jobs:
       - uses: actions/setup-node@master
         with:
           node-version: "10.x"
-      - run: echo "{'projects':{'default':${{secrets.FIREBASE_PROJECT_ID}}},"targets":{${{secrets.FIREBASE_PROJECT_ID}}:{"hosting":{"maggot":[${{secrets.FIREBASE_PROJECT_ID}}]}}}}" > .firebaserc
       - run: npm install
       - run: npm run build
       - uses: w9jds/firebase-action@master
         with:
           args: deploy --only hosting
         env:
+          PROJECT_ID: ${{secrets.FIREBASE_PROJECT_ID}}
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           FIREBASE_API_KEY: ${{secrets.FIREBASE_API_KEY}}
           FIREBASE_ATH_DOMAIN: ${{secrets.FIREBASE_ATH_DOMAIN}}
