@@ -17,6 +17,8 @@ jobs:
       - run: npm link
       - run: npm install
       - run: npm run build
+        with:
+          FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
         env:
           FIREBASE_PROJECT_ID: ${{secrets.FIREBASE_PROJECT_ID}}
       - uses: w9jds/firebase-action@master
