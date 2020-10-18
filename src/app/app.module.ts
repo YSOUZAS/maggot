@@ -5,11 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // modules
-import { SharedModule } from './shared-modules/shared/shared.module';
+import { AuthenticationModule } from './shared-modules/authentication/authentication.module';
+import { LayoutsModule } from './shared-modules/layouts/layouts.module';
 
 // components
 import { AppComponent } from './app.component';
-import { MaterialModule } from './shared-modules/material/material.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,8 +17,8 @@ import { MaterialModule } from './shared-modules/material/material.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedModule,
-    MaterialModule,
+    AuthenticationModule,
+    LayoutsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
