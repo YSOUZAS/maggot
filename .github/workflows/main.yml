@@ -21,3 +21,10 @@ jobs:
           args: deploy --only hosting
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          FIREBASE_API_KEY: ${{secretes.FIREBASE_API_KEY}}
+          FIREBASE_ATH_DOMAIN: ${{secretes.FIREBASE_ATH_DOMAIN}}
+          FIREBASE_DATABASE_URL: ${{secretes.FIREBASE_DATABASE_URL}}
+          FIREBASE_PROJECT_ID: ${{secretes.FIREBASE_PROJECT_ID}}
+          FIREBASE_STORAGE_BUCKET: ${{secretes.FIREBASE_STORAGE_BUCKET}}
+          FIREBASE_MESSAGING_SENDER_ID: ${{secretes.FIREBASE_MESSAGING_SENDER_ID}}
+          FIREBASE_APP_ID: ${{secretes.FIREBASE_APP_ID}}
