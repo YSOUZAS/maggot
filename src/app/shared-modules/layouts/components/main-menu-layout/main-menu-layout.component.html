@@ -1,0 +1,25 @@
+<app-toolbar
+  [title]="title"
+  (event)="sidenav.toggle()"
+  class="l-mainManu__toolbar"
+></app-toolbar>
+
+<mat-sidenav-container class="l-mainManu__container">
+  <mat-sidenav
+    #sidenav
+    mode="side"
+    [position]="'end'"
+    class="l-mainManu__sidenav"
+  >
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<app-toolbar
+  [title]="footer"
+  [hasIcon]="false"
+  class="l-mainManu__footer"
+></app-toolbar>
