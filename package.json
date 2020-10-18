@@ -3,12 +3,15 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "createfile && ng serve",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ngcc"
+  },
+  "bin": {
+    "createfile": "bin/create.js"
   },
   "private": true,
   "dependencies": {
@@ -28,6 +31,7 @@
     "firebase": "^7.24.0",
     "ngx-auth-firebaseui": "^4.4.0",
     "rxjs": "~6.6.0",
+    "shelljs": "^0.8.4",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
   },

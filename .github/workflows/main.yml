@@ -16,6 +16,8 @@ jobs:
           node-version: "10.x"
       - run: npm install
       - run: npm run build
+        env:
+          FIREBASE_PROJECT_ID: ${{secrets.FIREBASE_PROJECT_ID}}
       - uses: w9jds/firebase-action@master
         with:
           args: deploy --only hosting
