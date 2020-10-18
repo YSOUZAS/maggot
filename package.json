@@ -4,14 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "createfile && ng build --prod",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ngcc"
-  },
-  "bin": {
-    "createfile": "bin/create.js"
   },
   "private": true,
   "dependencies": {
