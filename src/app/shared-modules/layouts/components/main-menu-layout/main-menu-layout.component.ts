@@ -18,7 +18,10 @@ export class MainMenuLayoutComponent implements OnInit {
 
   user$: Observable<firebase.User> = null;
 
-  routes = [{ name: 'Profile', url: 'profile' }];
+  routes = [
+    { name: 'Profile', url: 'profile' },
+    { name: 'Company', url: 'company' },
+  ];
   constructor(
     private authProviderService: AuthProviderService,
     private router: Router,
