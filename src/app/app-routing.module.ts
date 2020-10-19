@@ -34,18 +34,27 @@ const routes: Routes = [
         ...canActivate(redirectUnauthorizedToLogin),
       },
       {
-        path: 'login',
+        path: 'profile',
         loadChildren: () =>
-          import('./business-modules/login/login.module').then(
-            (m) => m.LoginModule,
+          import('./business-modules/profile/profile.module').then(
+            (m) => m.ProfileModule,
           ),
-        ...canActivate(redirectLoggedInToHome),
+        ...canActivate(redirectUnauthorizedToLogin),
       },
       {
         path: '**',
         redirectTo: 'login',
       },
     ],
+  },
+  {
+    path: 'login',
+    component: MainMenuLayoutComponent,
+    loadChildren: () =>
+      import('./business-modules/login/login.module').then(
+        (m) => m.LoginModule,
+      ),
+    ...canActivate(redirectLoggedInToHome),
   },
 ];
 

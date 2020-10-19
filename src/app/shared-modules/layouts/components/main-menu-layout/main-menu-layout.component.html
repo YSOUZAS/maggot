@@ -1,6 +1,7 @@
 <app-toolbar
   [title]="title"
   (event)="sidenav.toggle()"
+  [hasIcons]="user$ | async"
   class="l-mainManu__toolbar"
 ></app-toolbar>
 
@@ -11,6 +12,11 @@
     [position]="'end'"
     class="l-mainManu__sidenav"
   >
+    <mat-nav-list *ngFor="let route of routes">
+      <mat-list-item role="listitem" (click)="redirect(route.url)">
+        {{ route.name }}</mat-list-item
+      >
+    </mat-nav-list>
   </mat-sidenav>
 
   <mat-sidenav-content>
@@ -20,6 +26,6 @@
 
 <app-toolbar
   [title]="footer"
-  [hasIcon]="false"
+  [hasIcons]="false"
   class="l-mainManu__footer"
 ></app-toolbar>
