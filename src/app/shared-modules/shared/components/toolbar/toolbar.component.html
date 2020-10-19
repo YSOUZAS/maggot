@@ -2,8 +2,25 @@
   <mat-toolbar-row>
     <span>{{ title }}</span>
     <span class="c-toolbar__spacer"></span>
-    <button *ngIf="hasIcon" mat-icon-button (click)="emitEvent()">
-      <mat-icon>menu</mat-icon>
-    </button>
+
+    <div *ngIf="hasIcons">
+      <button mat-icon-button (click)="emitEvent()">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <button
+        mat-icon-button
+        [matMenuTriggerFor]="menu"
+        aria-label="Example icon-button with a menu"
+      >
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button (click)="logout()" mat-menu-item>
+          <mat-icon>logout</mat-icon>
+          <span>Logout</span>
+        </button>
+      </mat-menu>
+    </div>
   </mat-toolbar-row>
 </mat-toolbar>

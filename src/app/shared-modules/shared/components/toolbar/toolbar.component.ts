@@ -7,6 +7,9 @@ import {
   Input,
 } from '@angular/core';
 
+// services
+import { AuthProviderService } from './../../../authentication/services/auth-provider.service';
+
 @Component({
   selector: 'app-toolbar',
   templateUrl: './toolbar.component.html',
@@ -27,9 +30,15 @@ export class ToolbarComponent {
     return this._title;
   }
 
-  @Input() hasIcon = true;
+  @Input() hasIcons = true;
+
+  constructor(private authProviderService: AuthProviderService) {}
 
   emitEvent(): void {
     this.event.emit();
+  }
+
+  logout(): void {
+    this.authProviderService.logout();
   }
 }
