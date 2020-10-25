@@ -1,0 +1,138 @@
+<ng-container *ngIf="!isLoading; else progressSpinner">
+  <mat-toolbar>
+    <span>{{ title }} Lojas</span>
+  </mat-toolbar>
+  <form class="c-companyEdit__form" [formGroup]="editForm" (submit)="submit()">
+    <mat-card>
+      <mat-card-content>
+        <mat-form-field class="c-companyEdit__input">
+          <mat-label>Nome</mat-label>
+          <input
+            matInput
+            formControlName="name"
+            [errorStateMatcher]="matcher"
+          />
+          <mat-hint>Preencha o nome da loja</mat-hint>
+          <mat-error *ngIf="editForm.get('name').hasError('required')">
+            Email é <strong>Obrigatorio</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="c-companyEdit__input">
+          <mat-label>Endereço</mat-label>
+          <input
+            matInput
+            formControlName="endereco"
+            [errorStateMatcher]="matcher"
+          />
+          <mat-hint>Preencha o endereço da loja</mat-hint>
+          <mat-error *ngIf="editForm.get('endereco').hasError('required')">
+            Endereço é <strong>Obrigatorio</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="c-companyEdit__input">
+          <mat-label>Código Postal</mat-label>
+          <input
+            matInput
+            formControlName="cep"
+            [errorStateMatcher]="matcher"
+            type="number"
+          />
+          <mat-hint>Preencha o Código Postal da loja</mat-hint>
+          <mat-error *ngIf="editForm.get('endereco').hasError('required')">
+            Código Postal é <strong>Obrigatorio</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="c-companyEdit__input">
+          <mat-label>Município</mat-label>
+          <input
+            matInput
+            formControlName="municipio"
+            [errorStateMatcher]="matcher"
+          />
+          <mat-hint>Preencha o município da loja</mat-hint>
+          <mat-error *ngIf="editForm.get('municipio').hasError('required')">
+            Município é <strong>Obrigatorio</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="c-companyEdit__input">
+          <mat-label>Distrito</mat-label>
+          <input
+            matInput
+            formControlName="distrito"
+            [errorStateMatcher]="matcher"
+          />
+          <mat-hint>Preencha o distrito da loja</mat-hint>
+          <mat-error *ngIf="editForm.get('distrito').hasError('required')">
+            Distrito é <strong>Obrigatorio</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="c-companyEdit__input">
+          <mat-label>Contribuinte</mat-label>
+          <input
+            matInput
+            formControlName="contribuinte"
+            [errorStateMatcher]="matcher"
+            type="number"
+          />
+          <mat-hint>Preencha o contribuinte da loja</mat-hint>
+          <mat-error *ngIf="editForm.get('contribuinte').hasError('required')">
+            Contribuinte é <strong>Obrigatorio</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="c-companyEdit__input">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            formControlName="email"
+            [errorStateMatcher]="matcher"
+          />
+          <mat-hint>Preencha o email da loja</mat-hint>
+          <mat-error *ngIf="editForm.get('email').hasError('required')">
+            Email é <strong>Obrigatorio</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="c-companyEdit__input">
+          <mat-label>Telemóvel</mat-label>
+          <input
+            matInput
+            formControlName="telemovel"
+            [errorStateMatcher]="matcher"
+            type="tel"
+          />
+          <mat-hint>Preencha o Telemóvel da loja</mat-hint>
+          <mat-error *ngIf="editForm.get('email').hasError('required')">
+            Telemóvel é <strong>Obrigatorio</strong>
+          </mat-error>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions align="end"
+        ><button
+          mat-raised-button
+          color="warn"
+          type="button"
+          (click)="cancel()"
+        >
+          Cancelar
+        </button>
+        <button mat-raised-button color="primary" type="submit">Salvar</button>
+      </mat-card-actions></mat-card
+    >
+  </form>
+</ng-container>
+<ng-template #progressSpinner>
+  <div class="c-companyEdit__spinner">
+    <mat-progress-spinner
+      [color]="'primary'"
+      [mode]="'indeterminate'"
+      [value]="'45'"
+    >
+    </mat-progress-spinner>
+  </div>
+</ng-template>

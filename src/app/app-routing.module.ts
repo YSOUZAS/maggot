@@ -42,6 +42,14 @@ const routes: Routes = [
         ...canActivate(redirectUnauthorizedToLogin),
       },
       {
+        path: 'company',
+        loadChildren: () =>
+          import('./business-modules/company/company.module').then(
+            (m) => m.CompanyModule,
+          ),
+        ...canActivate(redirectUnauthorizedToLogin),
+      },
+      {
         path: '**',
         redirectTo: 'login',
       },

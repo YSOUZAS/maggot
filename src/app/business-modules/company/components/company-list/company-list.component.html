@@ -1,0 +1,65 @@
+<div *ngIf="{ companies: companies | async } as data">
+  <ng-container *ngIf="data.companies; else progressSpinner">
+    <mat-grid-list
+      cols="2"
+      rowHeight="8:1"
+      [gutterSize]="'1rem'"
+      class="c-companyList__list"
+    >
+      <mat-grid-tile rowspan="2" *ngFor="let company of data.companies">
+        <mat-card class="c-companyList__card">
+          <mat-card-header>
+            <mat-card-title>{{ company.name }}</mat-card-title>
+            <mat-card-subtitle
+              >{{ company.endereco }} - {{ company.cep }} -
+              {{ company.municipio }} -
+              {{ company.distrito }}</mat-card-subtitle
+            >
+          </mat-card-header>
+          <mat-card-content class="c-companyList__card--email">
+            <p>{{ company.email }}</p>
+          </mat-card-content>
+          <mat-card-actions align="end">
+            <button
+              mat-raised-button
+              color="primary"
+              type="button"
+              routerLink="/company/edit/{{ company.key }}"
+            >
+              Editar
+            </button>
+
+            <button
+              mat-raised-button
+              color="primary"
+              type="button"
+              (click)="remove(company.key)"
+            >
+              Deletar
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+    <button
+      mat-fab
+      color="accent"
+      aria-label="Example icon button with a delete icon"
+      routerLink="/company/edit"
+      class="c-companyList__fab"
+    >
+      <mat-icon>add</mat-icon>
+    </button>
+  </ng-container>
+  <ng-template #progressSpinner>
+    <div class="c-companyList__spinner">
+      <mat-progress-spinner
+        [color]="'primary'"
+        [mode]="'indeterminate'"
+        [value]="'45'"
+      >
+      </mat-progress-spinner>
+    </div>
+  </ng-template>
+</div>

@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // modules
 import { AuthenticationModule } from './shared-modules/authentication/authentication.module';
 import { LayoutsModule } from './shared-modules/layouts/layouts.module';
+import { FirebaseModule } from './shared-modules/firebase/firebase.module';
 
 // components
 import { AppComponent } from './app.component';
@@ -19,6 +20,7 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     AuthenticationModule,
     LayoutsModule,
+    FirebaseModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

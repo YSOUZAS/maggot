@@ -1,0 +1,24 @@
+.c-companyEdit {
+  &__spinner {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+  }
+
+  &__form {
+    display: flex;
+    position: relative;
+    top: 0%;
+    left: 35%;
+    min-width: 150px;
+    max-width: 500px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__input {
+    padding-bottom: 1rem;
+    width: 100%;
+  }
+}
