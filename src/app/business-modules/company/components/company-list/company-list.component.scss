@@ -1,0 +1,30 @@
+.c-companyList {
+  &__spinner {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+  }
+
+  &__list {
+    display: flex;
+    margin-top: 2.125rem;
+    margin-right: 2.125rem;
+    margin-left: 2.125rem;
+    justify-content: space-between;
+  }
+
+  &__card {
+    width: 100%;
+    border: 0.1rem solid;
+
+    &--email {
+      padding-left: 1rem;
+    }
+  }
+
+  &__fab {
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+  }
+}

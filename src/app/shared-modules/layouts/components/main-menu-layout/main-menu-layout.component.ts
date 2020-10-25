@@ -1,6 +1,5 @@
 // angular
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 // services
 import { AuthProviderService } from './../../../authentication/services/auth-provider.service';
@@ -22,16 +21,9 @@ export class MainMenuLayoutComponent implements OnInit {
     { name: 'Profile', url: 'profile' },
     { name: 'Company', url: 'company' },
   ];
-  constructor(
-    private authProviderService: AuthProviderService,
-    private router: Router,
-  ) {}
+  constructor(private authProviderService: AuthProviderService) {}
 
   ngOnInit(): void {
     this.user$ = this.authProviderService.isLoggin();
-  }
-
-  redirect(url: string): void {
-    this.router.navigate([url]);
   }
 }
